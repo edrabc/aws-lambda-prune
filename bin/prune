@@ -85,6 +85,7 @@ lambda.listVersionsByFunction({ FunctionName: functionName }, function( err, dat
 	return cb();
       }
       else {
+	console.log( 'Deleting', v.Version );
 	lambda.deleteFunction({ FunctionName: functionName, Qualifier: v.Version }, cb );
       }
     }, exit );
